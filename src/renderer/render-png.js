@@ -90,5 +90,4 @@ async function getPNG({pageContent, viewportSize, componentOptions}) {
     });
 }
 
-
 module.exports = getPNG;
