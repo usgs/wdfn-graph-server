@@ -13,16 +13,15 @@ const inUse = function ({ size, available }) {
 describe('Puppeteer pool', function () {
     let pool;
 
-    beforeEach(async function () {
+    beforeEach( function () {
         pool = createPool({
             min: 0,
-            max: 3
+            max: 2
         });
     });
 
     afterEach(async function () {
-        await pool.drain();
-        pool.clear();
+        pool.drain().then(() => pool.clear());
     });
 
     test('create pool', async function () {
@@ -31,41 +30,8 @@ describe('Puppeteer pool', function () {
         const viewportSize = await page.viewport();
         expect(viewportSize.width).toEqual(800);
         expect(viewportSize.height).toEqual(600);
-        await pool.release(instance);
-    });
 
-    test('create some pools', async function () {
-        const instances = await Promise.all([
-            pool.acquire(),
-            pool.acquire(),
-            pool.acquire()
-        ]);
-        expect(getState(pool)).toEqual({
-            available: 0,
-            pending: 0,
-            max: 3,
-            min: 0,
-            size: 3,
-        });
-        const [firstInstance, ...otherInstances] = instances;
-        await pool.release(firstInstance);
-        expect(getState(pool)).toEqual({
-            available: 1,
-            pending: 0,
-            max: 3,
-            min: 0,
-            size: 3
-        });
-        await Promise.all(otherInstances.map(function (instance) {
-            return pool.release(instance);
-        }));
-        expect(getState(pool)).toEqual({
-            available: 3,
-            pending: 0,
-            max: 3,
-            min: 0,
-            size: 3
-        });
+        await pool.release(instance);
     });
 
     test('use', async function () {
@@ -90,10 +56,5 @@ describe('Puppeteer pool', function () {
             expect(err.message).toEqual('some err');
         }
         expect(inUse(pool)).toEqual(0);
-    });
-
-    test('destroy pool', async function () {
-        await pool.drain();
-        return pool.clear();
     });
 });

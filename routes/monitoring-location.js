@@ -14,7 +14,7 @@ const monitoringLocation = function(req, res) {
     renderToResponse(res, {
         siteID: req.params.siteID,
         parameterCode: req.query.parameterCode,
-        compare: req.query.compare,
+        compare: req.query.compare || false,
         period: req.query.period,
         startDT: req.query.startDT,
         endDT: req.query.endDT,
