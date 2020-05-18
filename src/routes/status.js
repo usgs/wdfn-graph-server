@@ -1,4 +1,4 @@
-const { version } = require('../package.json');
+const { version } = require('../../package.json');
 
 /*
  * Returns a res for

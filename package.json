@@ -1,8 +1,8 @@
 {
-  "name": "waterdataui-graph-server",
-  "version": "0.32.0dev",
+  "name": "wdfn-graph-server",
+  "version": "0.33.0dev",
   "description": "Water Data For The Nation graph server renderer",
-  "main": "app.js",
+  "main": "src/app.js",
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
@@ -16,12 +16,13 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules",
-    "test": "jest",
-    "start": "DEBUG=express:* node app.js",
+    "test:watch": "jest --watchAll",
+    "test": "jest --watchAll",
+    "start": "DEBUG=express:* node src/app.js",
     "watch": "run-p watch:*",
-    "watch:server": "DEBUG=express:* STATIC_ROOT=http://localhost:9000 nodemon app.js",
-    "watch:swagger": "nodemon -w app.js -w swagger-def.js -x \"npm run build:swagger\"",
-    "build:swagger": "swagger-jsdoc -d swagger-def.js -o swagger.json"
+    "watch:server": "DEBUG=express:* STATIC_ROOT=http://localhost:9000 nodemon src/app.js",
+    "watch:swagger": "nodemon -w src/app.js -w src/swagger-def.js -x \"npm run build:swagger\"",
+    "build:swagger": "swagger-jsdoc -d src/swagger-def.js -o src/swagger.json"
   },
   "engines": {
     "node": "12.16.3"

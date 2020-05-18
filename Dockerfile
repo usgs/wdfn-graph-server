@@ -1,5 +1,5 @@
 # Use LTS release
-FROM node:10.18.1-slim
+FROM node:12-slim
 
 RUN  apt-get update \
     && apt-get install -y gnupg1 \
@@ -13,7 +13,7 @@ RUN  apt-get update \
      && rm -rf /var/lib/apt/lists/*
 
 # Source will be added here
-WORKDIR /graph-server
+WORKDIR /wdfn-graph-server
 
 # Add manifest and install dependencies
 COPY package.json package-lock.json ./
@@ -30,9 +30,9 @@ ENV DEBUG express:*
 RUN groupadd grapher && useradd -g grapher grapher \
     && mkdir -p /home/grapher/Downloads \
     && chown -R grapher:grapher /home/grapher \
-    && chown -R grapher:grapher /graph-server
+    && chown -R grapher:grapher /wdfn-graph-server
 USER grapher
 
 EXPOSE 2929
 
-CMD DEBUG=${DEBUG} STATIC_ROOT=${STATIC_URL} OGC_SITE_ENDPOINT=${OGC_SITE_ENDPOINT} node src/index.js
+CMD DEBUG=${DEBUG} STATIC_ROOT=${STATIC_URL} OGC_SITE_ENDPOINT=${OGC_SITE_ENDPOINT} node src/app.js

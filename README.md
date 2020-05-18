@@ -65,6 +65,13 @@ Tests can be run by using the command:
 ```bash
 % npm run test
 ```
+By default this will expect the assets to be loaded at localhost:9000 for the images.
+Typically this means that you should also be running the asset server for waterdataui.
+
+To run the tests in watch mode use:
+```bash
+% npm run test:watch
+```
 
 ## Docker
 

@@ -18,5 +18,5 @@ module.exports = {
         }
     },
     basePath: PATH_CONTEXT,
-    apis: ['src/index.js']
+    apis: ['app.js']
 };

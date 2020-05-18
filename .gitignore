@@ -1,4 +1,4 @@
 .idea/
 node_modules/
 coverage/
-swagger.json
+src/swagger.json
