@@ -1,7 +1,7 @@
 const express = require('express');
 const cache = require('express-cache-headers');
 const {checkSchema} = require('express-validator');
-const swaggerUi = require('swagger-ui-express');
+const swaggerUi = require ('swagger-ui-express');
 
 const status = require('./routes/status');
 const monitoringLocation = require('./routes/monitoring-location');
@@ -15,7 +15,7 @@ const PATH_CONTEXT = process.env.PATH_CONTEXT || '/api/graph-images';
 const app = express();
 
 // Start the server
-const server = app.listen(PORT, function () {
+const server = app.listen(PORT, function() {
     console.log(`Graph server running on port ${PORT}`);
 });
 
@@ -126,7 +126,7 @@ app.get(`${PATH_CONTEXT}/monitoring-location/:siteID/`, cache({ttl: CACHE_TIMEOU
                     max: 1200
                 }
             },
-            toInt: true,
+            toInt: true
 
         },
         compare: {

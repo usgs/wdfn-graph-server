@@ -1,14 +1,9 @@
 const createPool = require('./puppeteer-pool');
 
 
-const getState = function ({ size, available, pending, max, min }) {
-    const state = { size, available, pending, max, min };
-    return state;
-}
-
 const inUse = function ({ size, available }) {
     return size - available;
-}
+};
 
 describe('Puppeteer pool', function () {
     let pool;
@@ -47,14 +42,10 @@ describe('Puppeteer pool', function () {
 
     test('use and throw', async function () {
         expect(inUse(pool)).toEqual(0);
-        try {
-            await pool.use(async function () {
+        await expect(pool.use(async function () {
                 expect(inUse(pool)).toEqual(1);
                 throw new Error('some err');
-            });
-        } catch (err) {
-            expect(err.message).toEqual('some err');
-        }
+            })).rejects.toThrow('some err');
         expect(inUse(pool)).toEqual(0);
     });
 });

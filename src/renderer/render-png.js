@@ -54,12 +54,9 @@ async function renderToPage(renderFunc) {
             await page.close();
         }
     });
-};
+}
 
 async function getPNG({pageContent, viewportSize, componentOptions}) {
-    // Buffer to assign screenshot to
-    let buffer;
-
     return await renderToPage(async function (page) {
         // Set the origin header for outgoing requests - this is to avoid waterservices
         // returning a 403 on a null origin.
@@ -74,9 +71,6 @@ async function getPNG({pageContent, viewportSize, componentOptions}) {
 
         // Log browser console messages
         page.on('console', msg => console.log('[CONSOLE LOG]', msg.text()));
-
-        const element = page.$('body');
-        const text = await page.evaluate(element => element.textContent, element);
 
         // If the page should have a comparison series, wait for it. Otherwise,
         // wait for the current year series. Fall back to the no-data-message
@@ -94,7 +88,7 @@ async function getPNG({pageContent, viewportSize, componentOptions}) {
         // Generate screenshot
         return await handle.screenshot();
     });
-};
+}
 
 
 module.exports = getPNG;

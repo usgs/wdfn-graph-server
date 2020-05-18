@@ -63,7 +63,7 @@ describe('routes/monitoring-location', () => {
         monitoringLocation(request, response);
 
         expect(response.statusCode).toBe(400);
-        expect(response._getData()).toEqual(['Validation errors exist'])
+        expect(response._getData()).toEqual(['Validation errors exist']);
     });
 
     it('query parameters populate the rendering request as expected', () =>{
