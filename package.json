@@ -17,7 +17,7 @@
   "scripts": {
     "clean": "rm -rf node_modules",
     "test:watch": "jest --watchAll",
-    "test": "jest",
+    "test": "jest --forceExit",
     "start": "DEBUG=express:* node src/app.js",
     "watch": "run-p watch:*",
     "watch:server": "DEBUG=express:* STATIC_ROOT=http://localhost:9000 nodemon src/app.js",
