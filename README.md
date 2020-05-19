@@ -1,5 +1,8 @@
 # WDFN Server-side Graph Renderer
 
+[![Build Status](https://travis-ci.org/usgs/wdfn-graph-server.svg?branch=master)](https://travis-ci.org/usgs/wdfn-graph-server)
+[![codecov](https://codecov.io/gh/usgs/wdfn-graph-server/branch/master/graph/badge.svg)](https://codecov.io/gh/usgs/wdfn-graph-server)
+
 This project provides a node.js server-side rendering agent for Water Data For
 The Nation graphs.
 
