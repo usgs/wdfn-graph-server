@@ -1,0 +1,45 @@
+[
+  {
+    "name": "WDFN Graph Image Server",
+    "organization": "U.S. Geological Survey",
+    "description": "Provides services that return images of WDFN visual elements such as a hydrograph",
+    "version": "0.33.0dev",
+    "status": "Development",
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain, CC0-1.0",
+          "URL": "https://github.com/usgs/wdfn-graph-server/raw/master/LICENSE.md"
+        }
+      ]
+    },
+
+    "homepageURL": "https://github.com/usgs/wdfn-graph-server",
+    "downloadURL": "https://github.com/usgs/wdfn-graph-server/archive/master.zip",
+    "disclaimerURL": "https://github.com/usgs/wdfn-graph-server/blob/master/DISCLAIMER.md",
+    "repositoryURL": "https://github.com/usgs/wdfn-graph-server.git",
+    "vcs": "git",
+
+    "laborHours": 0,
+
+    "tags": [
+      "water data",
+      "NWIS"
+    ],
+
+    "languages": [
+      "javascript"
+    ],
+
+    "contact": {
+      "name": "Mary Bucknell",
+      "email": "mbucknell@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2020-05-18"
+    }
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "name": "wdfn-graph-server",
+  "version": "0.33.0dev",
+  "description": "Water Data For The Nation graph server renderer",
+  "main": "src/app.js",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/app.js",
+      "!**/swagger-def.js"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "test:watch": "jest --watchAll",
+    "test": "jest --forceExit",
+    "start": "DEBUG=express:* node src/app.js",
+    "lint": "npx eslint '**/**.js'",
+    "watch": "run-p watch:*",
+    "watch:server": "DEBUG=express:* STATIC_ROOT=http://localhost:9000 nodemon src/app.js",
+    "watch:swagger": "nodemon -w src/app.js -w src/swagger-def.js -x \"npm run build:swagger\"",
+    "build:swagger": "swagger-jsdoc -d src/swagger-def.js -o src/swagger.json"
+  },
+  "engines": {
+    "node": "12.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usgs/wdfn-graph-server.git"
+  },
+  "author": "USGS",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/usgs/wdfn-graph-server/issues"
+  },
+  "homepage": "https://github.com/usgs/wdfn-graph-server#readme",
+  "dependencies": {
+    "axios": "0.19.2",
+    "express": "4.17.1",
+    "express-cache-headers": "0.1.4",
+    "express-validator": "6.5.0",
+    "generic-pool": "3.7.1",
+    "puppeteer": "3.1.0",
+    "swagger-ui-express": "4.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.0.1",
+    "node-mocks-http": "^1.8.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "swagger-jsdoc": "^4.0.0"
+  }
+}
