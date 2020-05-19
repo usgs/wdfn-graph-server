@@ -47,6 +47,7 @@ variables as arguments:
 -  STATIC_ROOT: Default: https://waterdata.usgs.gov/nwisweb/wsgi/static
 -  OGC_SITE_ENDPOINT: Default: https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/
 -  DEBUG: Used to set portions of code to debug. By default this is blank but if desired set to express:* to debug the express routes
+
 For example:
 ```bash
 % NODE_PORT=80 node src/index.js
