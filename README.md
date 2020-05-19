@@ -40,13 +40,13 @@ to build separately the command is:
 The entrypoint for the application is `src/index.js`, which accepts the following environment
 variables as arguments:
 
--  PATH_CONTEXT: Default: /api/graph-images
--  NODE_PORT: Port to run http server on. Default 2929.
--  SERVICE_ROOT: Default: https://waterservices.usgs.gov/nwis
--  PAST_SERVICE_ROOT: Default: https://nwis.waterservices.usgs.gov/nwis
--  STATIC_ROOT: Default: https://waterdata.usgs.gov/nwisweb/wsgi/static
--  OGC_SITE_ENDPOINT: Default: https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/
--  DEBUG: Used to set portions of code to debug. By default this is blank but if desired set to express:* to debug the express routes
+-   PATH_CONTEXT: Default: /api/graph-images
+-   NODE_PORT: Port to run http server on. Default 2929.
+-   SERVICE_ROOT: Default: <https://waterservices.usgs.gov/nwis>
+-   PAST_SERVICE_ROOT: Default: <https://nwis.waterservices.usgs.gov/nwis>
+-   STATIC_ROOT: Default: <https://waterdata.usgs.gov/nwisweb/wsgi/static>
+-   OGC_SITE_ENDPOINT: Default: <https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/>
+-   DEBUG: Used to set portions of code to debug. By default this is blank but if desired set to express:* to debug the express routes
 
 For example:
 ```bash
