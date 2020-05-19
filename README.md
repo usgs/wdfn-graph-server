@@ -15,7 +15,7 @@ Returns json object containing the  version of the running service
 ```/monitoring-location/\<siteid\>/?parameterCode=xxxxx```
 Returns a png containing a hydrograph for parameterCode(xxxxxx) for the NWIS site(siteid) for the
 last seven days. The query parameter parameterCode is required and should be a valid NWIS parameter code (see 
-https://help.waterdata.usgs.gov/parameter_cd?group_cd=% )
+<https://help.waterdata.usgs.gov/parameter_cd?group_cd=%>)
 
 #### Optional query parameters
 See the OpenAPI documentation for the current list of available list of query parameters
@@ -37,13 +37,13 @@ to build separately the command is:
 The entrypoint for the application is `src/index.js`, which accepts the following environment
 variables as arguments:
 
-- PATH_CONTEXT: Default: /api/graph-images
-- NODE_PORT: Port to run http server on. Default 2929.
-- SERVICE_ROOT: Default: https://waterservices.usgs.gov/nwis
-- PAST_SERVICE_ROOT: Default: https://nwis.waterservices.usgs.gov/nwis
-- STATIC_ROOT: Default: https://waterdata.usgs.gov/nwisweb/wsgi/static
-- OGC_SITE_ENDPOINT: Default: https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/
-- DEBUG: Used to set portions of code to debug. By default this is blank but if desired set to express:* to debug the express routes
+-  PATH_CONTEXT: Default: /api/graph-images
+-  NODE_PORT: Port to run http server on. Default 2929.
+-  SERVICE_ROOT: Default: https://waterservices.usgs.gov/nwis
+-  PAST_SERVICE_ROOT: Default: https://nwis.waterservices.usgs.gov/nwis
+-  STATIC_ROOT: Default: https://waterdata.usgs.gov/nwisweb/wsgi/static
+-  OGC_SITE_ENDPOINT: Default: https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/
+-  DEBUG: Used to set portions of code to debug. By default this is blank but if desired set to express:* to debug the express routes
 For example:
 ```bash
 % NODE_PORT=80 node src/index.js

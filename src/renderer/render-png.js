@@ -49,8 +49,7 @@ async function renderToPage(renderFunc) {
         page.on('console', msg => console.log('PAGE LOG:', msg.text()));
         try {
             return await renderFunc(page);
-        }
-        finally {
+        } finally {
             await page.close();
         }
     });
