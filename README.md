@@ -73,6 +73,12 @@ To run the tests in watch mode use:
 % npm run test:watch
 ```
 
+### Miscellaneous scripts
+You can run eslint against your javascript code using
+```bash
+% npm run lint
+```
+
 ## Docker
 
 For deployment, a docker image is built and then deployed. To mimic the same thing locally execute the following
