@@ -183,4 +183,23 @@ app.get(`${PATH_CONTEXT}/monitoring-location/:siteID/`, cache({ttl: CACHE_TIMEOU
  */
 app.get(`${PATH_CONTEXT}/status`, status);
 
+/**
+ * @swagger
+ * /api/graph-images/swagger.json/:
+ *   get:
+ *     description: Return openAPI spec json
+ *     tags:
+ *       - openAPI
+ *     responses:
+ *       200:
+ *         description:
+ *         content:
+ *           application/json:
+ *             examples: ''
+ */
+app.get(`${PATH_CONTEXT}/swagger.json`, function(req, res) {
+   res.status(200);
+   res.send(swaggerDocument);
+});
+
 module.exports = server;
