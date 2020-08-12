@@ -185,11 +185,11 @@ app.get(`${PATH_CONTEXT}/status`, status);
 
 /**
  * @swagger
- * /api/graph-images/swagger.json/:
+ * /api/graph-images/openapi.json/:
  *   get:
  *     description: Return openAPI spec json
  *     tags:
- *       - openAPI
+ *       - OpenAPI
  *     responses:
  *       200:
  *         description:
@@ -197,7 +197,7 @@ app.get(`${PATH_CONTEXT}/status`, status);
  *           application/json:
  *             examples: ''
  */
-app.get(`${PATH_CONTEXT}/swagger.json`, function(req, res) {
+app.get(`${PATH_CONTEXT}/openapi.json`, function(req, res) {
    res.status(200);
    res.send(swaggerDocument);
 });
