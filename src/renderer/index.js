@@ -53,6 +53,7 @@ const renderToResponse = function (res,
                             };
                         </script>
                         <link rel="stylesheet" href="${STATIC_ROOT}/main.css">
+                        <script src="${STATIC_ROOT}/scripts/vendor.js"></script>
                         <script src="${STATIC_ROOT}/bundle.js"></script>
                     </head>
                     <body id="monitoring-location-page-container">
