@@ -47,7 +47,6 @@ const renderToResponse = function (res,
                         <script>
                             var CONFIG = {
                                 SERVICE_ROOT: '${SERVICE_ROOT}',
-                                NWIS_INVENTORY_ENDPOINT: '',
                                 PAST_SERVICE_ROOT: '${PAST_SERVICE_ROOT}',
                                 MULTIPLE_TIME_SERIES_METADATA_SELECTOR_ENABLED: false,
                                 STATIC_URL: '${STATIC_ROOT}'
