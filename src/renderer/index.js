@@ -47,12 +47,14 @@ const renderToResponse = function (res,
                         <script>
                             var CONFIG = {
                                 SERVICE_ROOT: '${SERVICE_ROOT}',
+                                NWIS_INVENTORY_ENDPOINT: '',
                                 PAST_SERVICE_ROOT: '${PAST_SERVICE_ROOT}',
                                 MULTIPLE_TIME_SERIES_METADATA_SELECTOR_ENABLED: false,
                                 STATIC_URL: '${STATIC_ROOT}'
                             };
                         </script>
                         <link rel="stylesheet" href="${STATIC_ROOT}/main.css">
+                        <script src="${STATIC_ROOT}/scripts/vendor.js"></script>
                         <script src="${STATIC_ROOT}/bundle.js"></script>
                     </head>
                     <body id="monitoring-location-page-container">
