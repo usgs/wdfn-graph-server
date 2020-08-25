@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.34.0...master)
+## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.35.0...master)
+
+## [0.35.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.34.0...wdfn-graph-server-0.35.0) - 2020-08-25
 ### Fixed
 - OGC_SITE_ENDPOINT in Dockerfile is now set for the correct OGC endpoint.
 
