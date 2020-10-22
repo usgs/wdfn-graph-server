@@ -24,6 +24,11 @@ last seven days. The query parameter parameterCode is required and should be a v
 See the OpenAPI documentation for the current list of available list of query parameters
 
 ## Running the server for development
+#### IMPORTANT! You will need version 14.1.0 or higher of Node.js. 
+Lower versions of Node will not unzip the internal Chromium package 
+correctly and this will cause the graph server to 'hang' while it attempts to access a file that it will never find.
+
+
 The dependencies need to be installed. To clear out any existing dependencies and to install:
 ```bash
 % npm run clean
