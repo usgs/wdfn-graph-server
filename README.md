@@ -11,7 +11,7 @@ The Nation graphs.
 ```/api-docs```
 
 ### Status service
-`/status```
+```/status```
 Returns json object containing the  version of the running service
 
 ### Monitoring Location service  
@@ -29,6 +29,24 @@ The dependencies need to be installed. To clear out any existing dependencies an
 % npm run clean
 % npm install
 ```
+The default port will be 2929 and the base of the URL will start with api/graph-images.
+```bash
+Example - local URL base
+localhost:2929/api/graph-images/
+
+Example - a query that will return a graph for 'depth to water level, feet below land surface' at USGS monitoring location 354133082042203
+http://localhost:2929/api/graph-images/monitoring-location/354133082042203/?parameterCode=72019
+
+
+```
+## Swagger
+Swagger is a application that programmatically generates documentation. Using the generated documentation, you can 
+create various URLs which can be used to test the application or generate graphs. 
+```bash
+Example - local URL for Swagger Documentation
+http://localhost:2929/api/graph-images/api-docs
+
+```  
 
 The swagger json needs to be generated prior to running. If one of the convenience commands
 below are used, the swagger json file is generated before the express server starts. If you want
@@ -86,7 +104,8 @@ You can run eslint against your javascript code using
 ## Docker
 
 For deployment, a docker image is built and then deployed. To mimic the same thing locally execute the following
-from the root level of this repo:
+from the root level of this repo (note: by default, the Docker container uses the same port as the local server,
+ so shut down the local version before running):
 ```bash
 % docker build -t wdfn_graph_server ./
 % docker run -p 2929:2929 --privileged wdfn_graph_server
