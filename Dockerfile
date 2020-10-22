@@ -1,5 +1,5 @@
 # Use LTS release
-FROM node:12-slim
+FROM node:14.1.0
 
 RUN  apt-get update \
     && apt-get install -y gnupg1 \

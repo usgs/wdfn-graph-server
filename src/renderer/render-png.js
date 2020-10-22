@@ -32,7 +32,6 @@ const pool = createPuppeteerPool({
     // Arguments to pass on to Puppeteer
     puppeteerArgs: {
         headless: true,
-        executablePath: process.env.CHROME_BIN,
         args: [
             // Ignore CORS issues
             '--disable-web-security',
@@ -56,7 +55,7 @@ async function renderToPage(renderFunc) {
 }
 
 async function getPNG({pageContent, viewportSize, componentOptions}) {
-    return await renderToPage(async function (page) {
+    return await renderToPage(async function(page) {
         // Set the origin header for outgoing requests - this is to avoid waterservices
         // returning a 403 on a null origin.
         page.setExtraHTTPHeaders({

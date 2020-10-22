@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
 const genericPool = require('generic-pool');
 
 
-const initPuppeteerPool = function (opts) {
+const initPuppeteerPool = function(opts) {
     const options = Object.assign({
         max: 10,
         // optional. if you set this, make sure to drain() (see step 3)
@@ -21,24 +21,24 @@ const initPuppeteerPool = function (opts) {
         maxUses: 50,
         testOnBorrow: true,
         puppeteerArgs: [],
-        validator: function () {
+        validator: function() {
             return Promise.resolve(true);
         },
         otherConfig: {}
     }, opts);
     // TODO: randomly destroy old instances to avoid resource leak?
     const factory = {
-        create: function () {
-            return puppeteer.launch(options.puppeteerArgs).then(function (instance) {
+        create: function() {
+            return puppeteer.launch(options.puppeteerArgs).then(function(instance) {
                 instance.useCount = 0;
                 return instance;
             });
         },
-        destroy: function (instance) {
+        destroy: function(instance) {
             instance.close();
         },
-        validate: function (instance) {
-            return options.validator(instance).then(function (valid) {
+        validate: function(instance) {
+            return options.validator(instance).then(function(valid) {
                 Promise.resolve(valid && (options.maxUses <= 0 || instance.useCount < options.maxUses));
             });
         }
@@ -52,24 +52,24 @@ const initPuppeteerPool = function (opts) {
     };
     const pool = genericPool.createPool(factory, config);
     const genericAcquire = pool.acquire.bind(pool);
-    pool.acquire = function () {
-        return genericAcquire().then(function (instance) {
+    pool.acquire = function() {
+        return genericAcquire().then(function(instance) {
             instance.useCount += 1;
             return instance;
         });
     };
-    pool.use = function (fn) {
+    pool.use = function(fn) {
         let resource;
         return pool.acquire()
-            .then(function (r) {
+            .then(function(r) {
                 resource = r;
                 return resource;
             })
             .then(fn)
-            .then(function (result) {
+            .then(function(result) {
                 pool.release(resource);
                 return result;
-            }, function (err) {
+            }, function(err) {
                 pool.release(resource);
                 throw err;
             });
