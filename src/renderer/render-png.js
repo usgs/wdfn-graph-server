@@ -32,7 +32,6 @@ const pool = createPuppeteerPool({
     // Arguments to pass on to Puppeteer
     puppeteerArgs: {
         headless: true,
-        executablePath: process.env.CHROME_BIN,
         args: [
             // Ignore CORS issues
             '--disable-web-security',
@@ -56,7 +55,7 @@ async function renderToPage(renderFunc) {
 }
 
 async function getPNG({pageContent, viewportSize, componentOptions}) {
-    return await renderToPage(async function (page) {
+    return await renderToPage(async function(page) {
         // Set the origin header for outgoing requests - this is to avoid waterservices
         // returning a 403 on a null origin.
         page.setExtraHTTPHeaders({
@@ -74,7 +73,7 @@ async function getPNG({pageContent, viewportSize, componentOptions}) {
         // If the page should have a comparison series, wait for it. Otherwise,
         // wait for the current year series. Fall back to the no-data-message
         const chartSel = componentOptions.compare ? '#ts-compare-group' : '#ts-current-group';
-        await page.waitForSelector(`${chartSel}, #no-data-message`);
+        await page.waitForSelector(`${chartSel}, #no-data-message`, { timeout: 100000, visible: true });
 
         // Get a snapshot of either the graph or the no data message, if the
         // graph isn't visible

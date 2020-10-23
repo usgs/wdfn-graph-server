@@ -8,7 +8,7 @@ const STATIC_ROOT = process.env.STATIC_ROOT || 'https://waterdata.usgs.gov/nwisw
 const OGC_SITE_ENDPOINT = process.env.OGC_SITE_ENDPOINT || 'https://labs.waterdata.usgs.gov/api/observations/collections/monitoring-locations/items/';
 const WATERWATCH_ENDPOINT = process.env.WATERWATCH_ENDPOINT || 'https://waterwatch.usgs.gov/webservices';
 
-const renderToResponse = function (res,
+const renderToResponse = function(res,
                                    {
                                        siteID,
                                        parameterCode,
@@ -68,11 +68,11 @@ const renderToResponse = function (res,
                     height: width
                 },
                 componentOptions
-            }).then(function (buffer) {
+            }).then(function(buffer) {
                 res.setHeader('Content-Type', 'image/png');
                 res.write(buffer, 'binary');
                 res.end(null, 'binary');
-            }).catch(function (error) {
+            }).catch(function(error) {
                 console.log(error);
                 res.status(500);
                 res.send({
