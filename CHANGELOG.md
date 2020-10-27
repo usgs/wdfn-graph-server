@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.36.0...master)
-## [0.36.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.35.0...wdfn-graph-server-0.35.0) - 2020-10-27
+## [0.36.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.35.0...wdfn-graph-server-0.36.0) - 2020-10-27
 ### Fixed
 - Added WATERWATCH_ENDPOINT to application. It defaults to the service url so no changes to Dockerfile needed.
 
