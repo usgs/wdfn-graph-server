@@ -45,7 +45,7 @@
     "express-validator": "6.6.1",
     "generic-pool": "3.7.1",
     "puppeteer": "5.4.0",
-    "swagger-ui-express": "4.1.4"
+    "swagger-ui-express": "4.1.6"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
