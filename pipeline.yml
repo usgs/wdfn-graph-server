@@ -27,3 +27,9 @@ urlRules:
     conditions:
       - "/api/graph-images/*"
     priority: 503
+tags:
+  wma:costCenter: TBD
+  wma:organization: IOW
+  wma:contact: "jkreft@usgs.gov"
+  wma:taggingVersion: 0.0.1
+  wma:project_id: iow
