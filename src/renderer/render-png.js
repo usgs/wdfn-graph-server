@@ -54,7 +54,7 @@ async function renderToPage(renderFunc) {
     });
 }
 
-async function getPNG({pageContent, viewportSize, componentOptions}) {
+async function getPNG({pageContent, viewportSize}) {
     return await renderToPage(async function(page) {
         // Set the origin header for outgoing requests - this is to avoid waterservices
         // returning a 403 on a null origin.
@@ -70,20 +70,15 @@ async function getPNG({pageContent, viewportSize, componentOptions}) {
         // Log browser console messages
         page.on('console', msg => console.log('[CONSOLE LOG]', msg.text()));
 
-        // If the page should have a comparison series, wait for it. Otherwise,
-        // wait for the current year series. Fall back to the no-data-message
-        const chartSel = componentOptions.compare ? '#ts-compare-group' : '#ts-current-group';
-        await page.waitForSelector(`${chartSel}, #no-data-message`, { timeout: 100000, visible: true });
+        await Promise.all([
+            page.waitForSelector('.hydrograph-svg .ts-primary-group', {visible: true}),
+            page.waitForSelector('.hydrograph-svg .ts-compare-group', {visible: true}),
+            page.waitForSelector('.hydrograph-svg #flood-level-points', {visible: true}),
+            page.waitForSelector('.hydrograph-svg .iv-graph-gw-levels-group', {visible: true}),
+            page.waitForSelector('.ts-legend-controls-container .legend-svg', {visible: true})
+        ]);
 
-        // Get a snapshot of either the graph or the no data message, if the
-        // graph isn't visible
         let handle = await page.$('.graph-container');
-        const isVisible = await handle.isIntersectingViewport();
-        if (!isVisible) {
-            handle = await page.$('#no-data-message');
-        }
-
-        // Generate screenshot
         return await handle.screenshot();
     });
 }
