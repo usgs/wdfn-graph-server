@@ -55,21 +55,14 @@ async function renderToPage(renderFunc) {
     });
 }
 
-async function getPNG({pageContent, viewportSize}) {
+async function getPNG(pageURL,viewportSize) {
     return await renderToPage(async function(page) {
-        // Set the origin header for outgoing requests - this is to avoid waterservices
-        // returning a 403 on a null origin.
-        page.setExtraHTTPHeaders({
-            origin: 'http://localhost:9000'
-        });
-
-        await page.setContent(pageContent);
-
-        // Use an arbitrary width that will guarantee desktop-like rendering.
+        console.log('pageURL is ' + pageURL);
         page.setViewport(viewportSize);
 
         // Log browser console messages
         page.on('console', msg => console.log('[CONSOLE LOG]', msg.text()));
+        page.goto(pageURL);
 
         await Promise.all([
             page.waitForSelector('.hydrograph-svg .ts-primary-group', {visible: true}),
@@ -79,7 +72,7 @@ async function getPNG({pageContent, viewportSize}) {
             page.waitForSelector('.ts-legend-controls-container .legend-svg', {visible: true})
         ]);
 
-        let handle = await page.$('.graph-container');
+        let handle = await page.$('#hydrograph-wrapper');
         return await handle.screenshot();
     });
 }
