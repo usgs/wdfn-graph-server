@@ -26,7 +26,6 @@ const renderToResponse = function(res,
         showMLName: showMLName
     };
 
-    console.log(`startDT = ${startDT}, endDT = ${endDT}`);
     const viewportSize = {
         width: width,
         height: width
