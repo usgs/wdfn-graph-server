@@ -21,7 +21,7 @@
     "start": "DEBUG=express:* node src/app.js",
     "lint": "npx eslint '**/**.js'",
     "watch": "run-p watch:*",
-    "watch:server": "DEBUG=express:* STATIC_ROOT=http://localhost:9000 nodemon src/app.js",
+    "watch:server": "DEBUG=express:* WDFN_ROOT=http://localhost:5050 nodemon src/app.js",
     "watch:swagger": "nodemon -w src/app.js -w src/swagger-def.js -x \"npm run build:swagger\"",
     "build:swagger": "swagger-jsdoc -d src/swagger-def.js -o src/swagger.json"
   },
@@ -39,7 +39,6 @@
   },
   "homepage": "https://github.com/usgs/wdfn-graph-server#readme",
   "dependencies": {
-    "axios": "0.21.1",
     "express": "4.17.1",
     "express-cache-headers": "0.1.4",
     "express-validator": "6.10.0",
