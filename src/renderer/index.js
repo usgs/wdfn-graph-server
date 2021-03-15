@@ -18,13 +18,14 @@ const renderToResponse = function(res,
     const pageParameters = {
         parameterCode,
         compare,
-        period: pagePeriod,
+        period: pagePeriod || '',
         startDT: pagePeriod ? '' : startDT,
-        endDT: pagePeriod ? '': endDT,
+        endDT: pagePeriod ? '' : endDT,
         timeSeriesId: timeSeriesId || '',
         showOnlyGraph: true,
         showMLName: showMLName
     };
+
     const viewportSize = {
         width: width,
         height: width

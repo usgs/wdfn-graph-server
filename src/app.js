@@ -144,14 +144,14 @@ app.get(`${PATH_CONTEXT}/monitoring-location/:siteID/`, cache({ttl: CACHE_TIMEOU
         startDT: {
             in: ['query'],
             optional: true,
-            toDate: true,
+            toDate: false,
             isISO8601: 'yyyy-mm-dd',
             errorMessage: 'The startDT must be a date'
         },
         endDT: {
             in: ['query'],
             optional: true,
-            toDate: true,
+            toDate: false,
             isISO8601: 'yyyy-mm-dd',
             custom: {
                 options: (value, {req}) => value > req.query.startDT,
