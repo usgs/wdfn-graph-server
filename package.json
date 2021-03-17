@@ -23,7 +23,7 @@
     "watch": "run-p watch:*",
     "watch:server": "DEBUG=express:* WDFN_ROOT=http://localhost:5050 nodemon src/app.js",
     "watch:swagger": "nodemon -w src/app.js -w src/swagger-def.js -x \"npm run build:swagger\"",
-    "build:swagger": "swagger-jsdoc -d src/swagger-def.js -o src/swagger.json"
+    "build:swagger": "swagger-jsdoc -d src/swagger-def.js src/app.js -o src/swagger.json"
   },
   "engines": {
     "node": "14.16.0"
@@ -58,6 +58,6 @@
     "node-mocks-http": "^1.10.1",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "swagger-jsdoc": "^5.0.1"
+    "swagger-jsdoc": "^6.1.0"
   }
 }
