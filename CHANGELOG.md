@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.36.0...master)
+## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.37.0...master)
+## [0.37.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.36.0...wdfn-graph-server-0.36.0) - 2021-03-17
 ### Changed
 - Updated to work with the refactored waterdataui. The changes will allow the application to better detect when rendering is complete. Field visit data is shown as is flood levels when appropriate.
 - The code now renders the monitoring-location page from wdfn rather than rendering the content which is created within the application. This will eliminate much of the dependancies between these two code bases and simplifies the graph server.
