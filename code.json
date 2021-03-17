@@ -3,7 +3,7 @@
     "name": "WDFN Graph Image Server",
     "organization": "U.S. Geological Survey",
     "description": "Provides services that return images of WDFN visual elements such as a hydrograph",
-    "version": "0.37.0",
+    "version": "0.38.0dev",
     "status": "Development",
 
     "permissions": {

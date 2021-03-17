@@ -1,6 +1,6 @@
 {
   "name": "wdfn-graph-server",
-  "version": "0.37.0",
+  "version": "0.38.0dev",
   "description": "Water Data For The Nation graph server renderer",
   "main": "src/app.js",
   "jest": {
