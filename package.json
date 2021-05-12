@@ -26,7 +26,7 @@
     "build:swagger": "swagger-jsdoc -d src/swagger-def.js src/app.js -o src/swagger.json"
   },
   "engines": {
-    "node": "14.16.0"
+    "node": "14.17.0"
   },
   "repository": {
     "type": "git",
@@ -41,9 +41,9 @@
   "dependencies": {
     "express": "4.17.1",
     "express-cache-headers": "0.1.4",
-    "express-validator": "6.10.0",
-    "generic-pool": "3.7.2",
-    "puppeteer": "^8.0.0",
+    "express-validator": "6.11.1",
+    "generic-pool": "3.7.8",
+    "puppeteer": "9.1.1",
     "swagger-ui-express": "4.1.6"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "jest": "^26.6.3",
     "node-mocks-http": "^1.10.1",
