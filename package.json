@@ -42,7 +42,7 @@
     "express": "4.17.1",
     "express-cache-headers": "0.1.4",
     "express-validator": "6.11.1",
-    "generic-pool": "3.7.8",
+    "generic-pool": "3.8.2",
     "puppeteer": "10.0.0",
     "swagger-ui-express": "4.1.6"
   },
