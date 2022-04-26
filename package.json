@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/usgs/wdfn-graph-server#readme",
   "dependencies": {
-    "express": "4.17.1",
+    "express": "4.18.0",
     "express-cache-headers": "0.1.4",
     "express-validator": "6.13.0",
     "generic-pool": "3.8.2",
