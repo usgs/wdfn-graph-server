@@ -21,7 +21,7 @@
     "start": "DEBUG=express:* node src/app.js",
     "lint": "npx eslint '**/**.js'",
     "watch": "run-p watch:*",
-    "watch:server": "DEBUG=express:* WDFN_ROOT=https://waterdata.usgs.gov nodemon src/app.js",
+    "watch:server": "DEBUG=express:* nodemon src/app.js",
     "watch:swagger": "nodemon -w src/app.js -w src/swagger-def.js -x \"npm run build:swagger\"",
     "build:swagger": "swagger-jsdoc -d src/swagger-def.js src/app.js -o src/swagger.json"
   },
