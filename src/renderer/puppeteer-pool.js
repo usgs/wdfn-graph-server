@@ -74,7 +74,6 @@ const initPuppeteerPool = function(opts) {
                 throw err;
             });
     };
-
     return pool;
 };
 
