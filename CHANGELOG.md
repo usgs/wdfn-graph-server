@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.37.0...master)
 
-## [0.38.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.37.0...wdfn-graph-server-0.38.0)
+## [0.38.0](https://github.com/usgs/wdfn-graph-server/compare/wdfn-graph-server-0.37.0...wdfn-graph-server-0.38.0) - 2022-06-17
 ### Changed
 - Updated all dependencies to fix an issue with rendering the monitoring location pages which now use Vue and load javascript with modules.
 
